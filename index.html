@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fresh Slab Pressure Washing | Pine Hollow</title>
+<meta name="description" content="Pressure washing for driveways, siding, decks and fences in Pine Hollow. Text a photo for a same-day quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E8E6E0; --surface:#F4F3EF; --ink:#1E282D; --muted:#56615F; --line:#C9C6BD;
+  --water:#0A6A85; --water-ink:#FFFFFF; --grime:#6F6A5A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#191E20; --surface:#22292C; --ink:#E9E7E1; --muted:#A5ADAB; --line:#374045;
+    --water:#3FA9C9; --water-ink:#0E1A1F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#191E20; --surface:#22292C; --ink:#E9E7E1; --muted:#A5ADAB; --line:#374045;
+  --water:#3FA9C9; --water-ink:#0E1A1F;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Archivo',"Helvetica Neue",Arial,sans-serif;font-stretch:100%;
+  font-size:1.0625rem;line-height:1.55}
+a{color:inherit}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+
+/* Header */
+header.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 0}
+.brand{font-weight:800;font-stretch:125%;font-size:1.05rem;letter-spacing:-.01em;text-decoration:none}
+.top .call{font-weight:600;text-decoration:none;border-bottom:2px solid var(--water);padding-bottom:1px}
+
+/* Hero */
+.hero h1{font-stretch:125%;font-weight:800;font-size:clamp(2.3rem,7.5vw,4.6rem);line-height:1;
+  letter-spacing:-.03em;margin:1.5rem 0 1rem;max-width:14ch}
+.hero p.sub{font-size:1.15rem;color:var(--muted);max-width:40ch;margin:0 0 1.5rem}
+.ctas{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3.1rem;padding:0 1.3rem;
+  border-radius:6px;font-weight:700;text-decoration:none;font-size:1.02rem}
+.btn.primary{background:var(--water);color:var(--water-ink)}
+.btn.ghost{border:2px solid var(--ink)}
+
+/* Before / after slab */
+.slab{position:relative;height:clamp(16rem,52vw,30rem);border-radius:4px;overflow:hidden;
+  touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.layer{position:absolute;inset:0}
+.noise{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.joints{background-image:linear-gradient(to right,rgba(0,0,0,.3) 3px,transparent 3px),
+  linear-gradient(to bottom,rgba(0,0,0,.3) 3px,transparent 3px);
+  background-size:clamp(9rem,30vw,15rem) clamp(9rem,30vw,15rem);background-position:-2px -2px}
+.before{background-color:#77715F;
+  background-image:
+    radial-gradient(ellipse 22% 18% at 30% 62%,rgba(30,28,22,.75),transparent 70%),
+    radial-gradient(ellipse 12% 9% at 36% 70%,rgba(20,18,14,.7),transparent 70%),
+    radial-gradient(ellipse 45% 40% at 85% 15%,rgba(62,84,44,.6),transparent 70%),
+    radial-gradient(ellipse 35% 30% at 10% 10%,rgba(62,84,44,.45),transparent 70%),
+    radial-gradient(ellipse 60% 30% at 55% 100%,rgba(35,32,24,.5),transparent 70%)}
+.after{background-color:#D9D6CE;clip-path:inset(0 0 0 var(--split,50%))}
+.after .noise{opacity:.35}
+.tag{position:absolute;top:.8rem;font-size:.85rem;font-weight:700;padding:.3rem .6rem;border-radius:4px;
+  background:rgba(20,24,26,.72);color:#fff}
+.tag.b{left:.8rem} .tag.a{right:.8rem}
+.handle{position:absolute;top:0;bottom:0;left:var(--split,50%);width:4px;margin-left:-2px;background:#fff;
+  box-shadow:0 0 0 1px rgba(0,0,0,.25);pointer-events:none}
+.handle::after{content:"";position:absolute;top:50%;left:50%;width:2.75rem;height:2.75rem;margin:-1.375rem 0 0 -1.375rem;
+  border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.35);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cpath d='M17 15l-7 7 7 7M27 15l7 7-7 7' fill='none' stroke='%231E282D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.slab input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
+.slab:focus-within .handle{background:var(--water)}
+.caption{font-size:.95rem;color:var(--muted);margin:.6rem 0 0}
+
+/* Sections */
+section.block{padding:4rem 0 0}
+h2{font-stretch:112%;font-weight:800;font-size:clamp(1.6rem,4.5vw,2.3rem);letter-spacing:-.02em;line-height:1.1;margin:0 0 1.25rem}
+.prices{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink);max-width:40rem}
+.prices li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.prices .name{font-weight:700;font-size:1.1rem}
+.prices .what{display:block;color:var(--muted);font-size:.95rem;font-weight:400}
+.prices .cost{font-weight:800;font-stretch:112%;white-space:nowrap}
+.note{color:var(--muted);font-size:.95rem;margin:.8rem 0 0}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.steps li{counter-increment:s;padding-top:.9rem;border-top:4px solid var(--water)}
+.steps li::before{content:counter(s);font-weight:800;font-stretch:125%;font-size:1.6rem;display:block;line-height:1;margin-bottom:.4rem;color:var(--water)}
+.steps h3{margin:0 0 .3rem;font-size:1.15rem}
+.steps p{margin:0;color:var(--muted)}
+
+.reviews{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+blockquote{margin:0}
+blockquote p{font-size:1.2rem;line-height:1.4;margin:0 0 .5rem;font-weight:500}
+blockquote footer{color:var(--muted);font-size:.95rem}
+
+.info{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.info h3{font-size:1.1rem;margin:0 0 .3rem}
+.info p{margin:0;color:var(--muted)}
+
+.closing{margin:4rem 0 0;padding:2.5rem 0;border-top:2px solid var(--ink)}
+.closing h2{max-width:18ch}
+footer.site{padding:2rem 0 7rem;color:var(--muted);font-size:.9rem}
+
+/* Mobile sticky bar */
+.bar{position:fixed;left:0;right:0;bottom:0;display:flex;gap:.6rem;padding:.7rem 1rem;
+  padding-bottom:calc(.7rem + env(safe-area-inset-bottom,0px));background:var(--surface);border-top:1px solid var(--line)}
+.bar .btn{flex:1}
+@media (min-width:48rem){ .bar{display:none} footer.site{padding-bottom:3rem} }
+
+a:focus-visible,input:focus-visible{outline:3px solid var(--water);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">Fresh Slab</a>
+    <a class="call" href="tel:+15550102230">(555) 010-2230</a>
+  </header>
+
+  <section class="hero">
+    <h1>Your driveway, back to the day it was poured.</h1>
+    <p class="sub">Pressure washing for driveways, siding, decks and fences in Pine Hollow. Text us a photo and get a price the same day.</p>
+    <div class="ctas">
+      <a class="btn primary" href="sms:+15550102230?body=Hi%2C%20I%27d%20like%20a%20quote.%20Here%27s%20a%20photo%3A">Text a photo for a quote</a>
+      <a class="btn ghost" href="tel:+15550102230">Call (555) 010-2230</a>
+    </div>
+
+    <div class="slab" id="slab" style="--split:50%">
+      <div class="layer before"><div class="layer noise"></div><div class="layer joints"></div></div>
+      <div class="layer after"><div class="layer noise"></div><div class="layer joints"></div></div>
+      <span class="tag b">Before</span><span class="tag a">After</span>
+      <div class="handle"></div>
+      <input type="range" id="split" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+    </div>
+    <p class="caption">Drag across the driveway to see the difference.</p>
+  </section>
+
+  <section class="block" id="prices">
+    <h2>What it costs</h2>
+    <ul class="prices">
+      <li><span class="name">Driveway<span class="what">Oil spots, tire marks and mildew</span></span><span class="cost">from $120</span></li>
+      <li><span class="name">House siding<span class="what">Soft wash that's safe for vinyl and paint</span></span><span class="cost">from $250</span></li>
+      <li><span class="name">Deck or patio<span class="what">Wood, composite, pavers and stone</span></span><span class="cost">from $150</span></li>
+      <li><span class="name">Fence<span class="what">Wood or vinyl, one or both sides</span></span><span class="cost">from $120</span></li>
+      <li><span class="name">Gutter faces<span class="what">Removes the black streaks on the outside</span></span><span class="cost">from $90</span></li>
+    </ul>
+    <p class="note">Book two services together and take 15% off the smaller one.</p>
+  </section>
+
+  <section class="block">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><h3>Text a photo</h3><p>Snap the area you want cleaned and send it to (555) 010-2230.</p></li>
+      <li><h3>Get your price</h3><p>You'll have a firm quote the same day, with no surprise fees on the day of the job.</p></li>
+      <li><h3>We wash, you check</h3><p>Walk the job with us before we leave. If a spot isn't right, we redo it.</p></li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <h2>What neighbors say</h2>
+    <div class="reviews">
+      <blockquote><p>They got oil stains out of our driveway that we'd given up on years ago.</p><footer>Dana R., Birch Street</footer></blockquote>
+      <blockquote><p>Showed up when they said, finished in two hours, and the siding looks new.</p><footer>Marcus T., Hollow Ridge</footer></blockquote>
+      <blockquote><p>I texted a photo at lunch and had a price before dinner.</p><footer>Priya S., Old Mill Road</footer></blockquote>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="info">
+      <div><h3>Where we work</h3><p>Pine Hollow and anywhere within 25 miles.</p></div>
+      <div><h3>When</h3><p>Monday to Saturday, 8am to 6pm. Quotes by text any day.</p></div>
+      <div><h3>Insured</h3><p>Fully insured. Proof of insurance available on request.</p></div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <h2>Send a photo and get a price today.</h2>
+    <div class="ctas">
+      <a class="btn primary" href="sms:+15550102230?body=Hi%2C%20I%27d%20like%20a%20quote.%20Here%27s%20a%20photo%3A">Text a photo for a quote</a>
+      <a class="btn ghost" href="tel:+15550102230">Call (555) 010-2230</a>
+    </div>
+  </section>
+
+  <footer class="site">Fresh Slab Pressure Washing, Pine Hollow. Demo site, business and details are fictional.</footer>
+</div>
+
+<div class="bar">
+  <a class="btn primary" href="sms:+15550102230?body=Hi%2C%20I%27d%20like%20a%20quote.%20Here%27s%20a%20photo%3A">Text for a quote</a>
+  <a class="btn ghost" href="tel:+15550102230">Call</a>
+</div>
+
+<script>
+const slab = document.getElementById('slab');
+const range = document.getElementById('split');
+const set = v => slab.style.setProperty('--split', v + '%');
+range.addEventListener('input', () => set(range.value));
+
+// One short intro sweep so visitors notice they can drag it
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!reduce){
+  let start = null;
+  const from = 88, to = 50, dur = 1400;
+  const step = t => {
+    if (start === null) start = t;
+    const p = Math.min((t - start) / dur, 1);
+    const e = 1 - Math.pow(1 - p, 3);
+    const v = from + (to - from) * e;
+    set(v); range.value = v;
+    if (p < 1) requestAnimationFrame(step);
+  };
+  setTimeout(() => requestAnimationFrame(step), 400);
+}
+</script>
+</body>
+</html>
